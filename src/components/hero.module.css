@@ -14,23 +14,8 @@
 
 .heroDetails {
   font-size: 30px;
-  margin: 0;
   padding: 0;
 }
-
-@media(max-width: 600px) {
-
-  .heroHeadline {
-    font-size: 20px;
-    line-height: 1;
-  }
-}
-
-/* @media(min-width: 1000px) {
-  .heroDetails {
-    font-size: 20px;
-  }
-} */
 
 .heroHeadline {
   font-size: 180px;
@@ -40,11 +25,21 @@
 }
 
 .heroIntro {
-  font-size: 30px;
   padding-bottom: .5em;
 }
 
 .heroBio {
   padding: 0;
   color: var(--red-500);
+}
+
+/**************************** Media Queries ******************************/
+
+@media (max-width: 800px) {
+
+  .heroHeadline {
+    font-size: 22vw;
+    line-height: 1;
+    padding: 12px 0;
+  }
 }
