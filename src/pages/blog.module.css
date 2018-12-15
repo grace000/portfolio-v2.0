@@ -1,0 +1,12 @@
+.hero {
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.heroHeadline {
+  font-size: 180px;
+  line-height: 1.1;
+  margin: -20px 0;
+  color: var(--blue-500);
+}
+

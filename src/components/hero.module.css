@@ -1,0 +1,50 @@
+.hero {
+  padding: 20px 20px;
+  margin: 0;
+}
+
+.heroImage {
+  /*
+    Ensure golden ratio for the hero size while limiting it to some extend to
+    the viewport width
+  */
+  height: 61.8vh;
+  max-height: 400px;
+}
+
+.heroDetails {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+@media(max-width: 600px) {
+
+  .heroHeadline {
+    font-size: 20px;
+    line-height: 1;
+  }
+}
+
+/* @media(min-width: 1000px) {
+  .heroDetails {
+    font-size: 20px;
+  }
+} */
+
+.heroHeadline {
+  font-size: 180px;
+  line-height: 1.1;
+  margin: -20px 0;
+  color: var(--blue-500);
+}
+
+.heroIntro {
+  font-size: 30px;
+  padding-bottom: .5em;
+}
+
+.heroBio {
+  padding: 0;
+  color: var(--red-500);
+}
