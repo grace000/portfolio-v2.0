@@ -28,8 +28,8 @@ class ArtPostTemplate extends React.Component {
 export default ArtPostTemplate
 
 export const query = graphql`
-  query {
-    contentfulArtWork {
+  query($title: String!){
+    contentfulArtWork(title: { eq: $title }) {
       title
       image {
         id
