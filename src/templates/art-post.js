@@ -17,6 +17,7 @@ class ArtPostTemplate extends React.Component {
           <Helmet title={`${post.title} | ${siteTitle}`} />
           <div className="wrapper">
             <h1 className="section-headline">{post.title}</h1>
+            <Img fluid={post.image.fluid} />
           </div>
         </div>
       </Layout>
@@ -32,6 +33,9 @@ export const query = graphql`
       title
       image {
         id
+        fluid(maxWidth: 200, maxHeight: 200, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid_tracedSVG
+        }
       }
     }
   }
