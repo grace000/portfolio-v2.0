@@ -5,13 +5,13 @@ import styles from './blog.module.css'
 import Layout from "../components/layout"
 import ArticlePreview from '../components/article-preview'
 
-const BlogIndex = () => {
+const BlogIndex = ({data}) => {
   const posts = data.allContentfulBlogPost.edges
 
   return (
     <Layout>
       <div style={{ background: '#fff' }}>
-        <Helmet title={siteTitle} />
+        <Helmet title={"blog posts"} />
         <div className={styles.hero}>
           <h1 className={styles.heroHeadline}>Blog</h1>
         </div>
@@ -35,8 +35,8 @@ const BlogIndex = () => {
 
 export default BlogIndex
 
-export const pageQuery = graphql`
-  query BlogIndexQuery {
+export const query = graphql`
+  query {
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {

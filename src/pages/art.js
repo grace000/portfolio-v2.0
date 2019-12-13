@@ -6,15 +6,13 @@ import styles from './blog.module.css'
 import Layout from "../components/layout"
 import Img from 'gatsby-image'
 
-class ArtIndex extends React.Component {
-  render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulArtWork.edges')
+const ArtIndex = ({data}) => {
+    const posts = data.allContentfulArtWork.edges
 
     return (
-      <Layout location={this.props.location} >
+      <Layout>
         <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
+          <Helmet title={"artwork"} />
           <div className={styles.hero}>
             <h1 className={styles.heroHeadline}>Art</h1>
           </div>
@@ -35,8 +33,7 @@ class ArtIndex extends React.Component {
         </div>
       </Layout>
     )
-  }
-}
+}   
 
 export default ArtIndex
 
