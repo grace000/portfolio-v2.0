@@ -1,29 +1,34 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import heroStyles from '../components/hero.module.css'
 
-class ArtPostTemplate extends React.Component {
-  render() {
-    const post = get(this.props, 'data.contentfulArtWork')
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+
+const ArtPostTemplate = ({data, pageContext}) => {
+   const {next, prev} = pageContext
+   const post = data.contentfulArtWork
 
     return (
-      <Layout location={this.props.location} >
+      <Layout>
         <div>
-          <Helmet title={`${post.title} | ${siteTitle}`} />
+          <Helmet title={post.title} />
           <div className="wrapper">
+            { prev && 
+                <Link to={`/art/${prev.slug}`}>Previous</Link>
+            }
+            { next && 
+                <Link to={`/art/${next.slug}`}>Next</Link>
+            }
             <h1 className="section-headline">{post.title}</h1>
-            <Img fluid={post.image.fluid} />
+            <Img fixed={post.image.fixed} />
           </div>
         </div>
-      </Layout>
+    </Layout>
     )
-  }
 }
+
 
 export default ArtPostTemplate
 
@@ -33,8 +38,8 @@ export const query = graphql`
       title
       image {
         id
-        fluid(maxWidth: 200, maxHeight: 200, resizingBehavior: SCALE) {
-            ...GatsbyContentfulFluid_tracedSVG
+        fixed(width: 450) {
+            ...GatsbyContentfulFixed_tracedSVG
         }
       }
     }

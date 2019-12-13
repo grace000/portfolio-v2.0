@@ -32,7 +32,9 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/blog/${post.node.slug}/`,
             component: blogPost,
             context: {
-              slug: post.node.slug
+              slug: post.node.slug,
+              prev: index === 0 ? null : posts[index - 1].node,
+              next: index === (posts.length - 1) ? null : posts[index + 1].node
             },
           })
         })
@@ -47,10 +49,13 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allContentfulArtWork {
+            allContentfulArtWork(
+              sort: {fields: createdAt, order: ASC}
+            ) {
               edges {
                 node {
                   title
+                  slug
                 }
               }
             }
@@ -65,10 +70,12 @@ exports.createPages = ({ graphql, actions }) => {
         const posts = result.data.allContentfulArtWork.edges
         posts.forEach((post, index) => {
           createPage({
-            path: `/art/${post.node.title}/`,
+            path: `/art/${post.node.slug}/`,
             component: artPost,
             context: {
-              title: post.node.title
+              title: post.node.title,
+              prev: index === 0 ? null : posts[index - 1].node,
+              next: index === (posts.length - 1) ? null : posts[index + 1].node
             },
           })
         })
