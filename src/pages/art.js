@@ -21,10 +21,34 @@ const ArtIndex = ({data}) => {
               {posts.map(({ node }) => {
                 return (
                     <div key={node.title} className="artwork-list-item">
-                        <Link to={`/art/${node.slug}`}>
-                            <p className="artwork-title">{node.title}</p>
-                            <Img className="artwork-image" fixed={node.image.fixed} />
-                        </Link>
+                        <article style={{display: "block", position:"relative"}}>
+                            <Link to={`/art/${node.slug}`} style={{display:"block", width: "100%", height: "100%" }}>
+                                <figure style={{
+                                    display:"block",
+                                    height:"100%",
+                                    width: "100%",
+                                    maxHeight: "none",
+                                    maxWidth: "none",
+                                    textAlign: "center",
+                                    top: 0,
+                                    right:0,
+                                    bottom: 0,
+                                    left:0,
+                                    overflow: "hidden",
+             
+            
+                                }}>
+                                    <Img className="artwork-image" fixed={node.image.fixed} 
+                                    style={{
+                                        position:"relative",
+                                        left: 0,
+                                        width: "375px",
+                                        height: "325px",
+
+                                    }}/>
+                                </figure>
+                            </Link>
+                        </article>
                     </div>
                 )
               })}
@@ -51,7 +75,7 @@ export const query = graphql`
                 aspectRatio
                 src
             }
-            fixed(width: 150) {
+            fixed(width: 375) {
                 ...GatsbyContentfulFixed_tracedSVG
             }
           }
