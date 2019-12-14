@@ -35,7 +35,7 @@ const ArtIndex = ({data}) => {
                                     bottom: 0,
                                     left:0,
                                     overflow: "hidden",
-                                    margin: 0,
+                                    margin: ".2em",
                                 }}>
                                     <Img className="artwork-image" fixed={node.image.fixed} 
                                         style={{
