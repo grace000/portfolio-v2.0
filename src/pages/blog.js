@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import styles from './blog.module.css'
 import Layout from "../components/layout"
 import ArticlePreview from '../components/article-preview'
 
@@ -12,8 +11,8 @@ const BlogIndex = ({data}) => {
     <Layout>
       <div style={{ background: '#fff' }}>
         <Helmet title={"blog posts"} />
-        <div className={styles.hero}>
-          <h1 className={styles.heroHeadline}>Blog</h1>
+        <div className="hero">
+          <h1 className="heroHeadline">Blog</h1>
         </div>
         <div className="wrapper">
           <ul className="article-list">

@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import styles from './blog.module.css'
 import Layout from "../components/layout"
 import Img from 'gatsby-image'
+
 
 const ArtIndex = ({data}) => {
     const posts = data.allContentfulArtWork.edges
@@ -13,9 +12,10 @@ const ArtIndex = ({data}) => {
       <Layout>
         <div style={{ background: '#fff' }}>
           <Helmet title={"artwork"} />
-          <div className={styles.hero}>
-            <h1 className={styles.heroHeadline}>Art</h1>
+          <div className="hero">
+            <h1 className="heroHeadline">Art</h1>
           </div>
+
           <div className="artwork-wrapper">
             <ul className="artwork-list">
               {posts.map(({ node }) => {
@@ -47,6 +47,10 @@ export const query = graphql`
           slug
           image {
             id
+            fluid {
+                aspectRatio
+                src
+            }
             fixed(width: 150) {
                 ...GatsbyContentfulFixed_tracedSVG
             }

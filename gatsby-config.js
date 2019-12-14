@@ -20,6 +20,10 @@ if (!spaceId || !accessToken) {
 }
 
 module.exports = {
+  siteMetadata: {
+    title: 'Tiffani Site',
+    author: 'Tiffani Elmore',
+  },
   pathPrefix: `/gatsby-contentful-starter`,
   plugins: [
     `gatsby-plugin-sass`,

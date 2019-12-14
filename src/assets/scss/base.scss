@@ -1,3 +1,11 @@
+@import './about.scss';
+@import './hero.scss';
+@import './navigation.scss';
+@import './article-preview.scss';
+@import './blog.scss';
+@import './button.scss';
+@import './contact.scss';
+
 @import url('https://fonts.googleapis.com/css?family=ABeeZee|Mukta:700|Volkhov');
 
 @font-face {
@@ -54,6 +62,12 @@ p {
   padding: 9vmin 0;
 }
 
+.artwork-wrapper {
+  width: calc(100% - 10vmin);
+  margin: 0 auto;
+  padding: 9vmin 0;
+}
+
 /**
  * article grid
  */
@@ -63,6 +77,18 @@ p {
   list-style: none;
   display: grid;
   grid-template-rows: auto;
+  grid-gap: 5vmin;
+}
+
+/**
+ * artwork grid
+ */
+.artwork-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 5vmin;
 }
 
