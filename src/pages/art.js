@@ -21,7 +21,7 @@ const ArtIndex = ({data}) => {
               {posts.map(({ node }) => {
                 return (
                     <div key={node.title} className="artwork-list-item">
-                        <article style={{display: "block", position:"relative"}}>
+                        <article>
                             <Link to={`/art/${node.slug}`} style={{display:"block", width: "100%", height: "100%" }}>
                                 <figure style={{
                                     display:"block",
@@ -35,17 +35,15 @@ const ArtIndex = ({data}) => {
                                     bottom: 0,
                                     left:0,
                                     overflow: "hidden",
-             
-            
                                 }}>
                                     <Img className="artwork-image" fixed={node.image.fixed} 
-                                    style={{
-                                        position:"relative",
-                                        left: 0,
-                                        width: "375px",
-                                        height: "325px",
-
-                                    }}/>
+                                        style={{
+                                            position:"relative",
+                                            left: 0,
+                                            width: "375px",
+                                            height: "325px",
+                                        }}
+                                    />
                                 </figure>
                             </Link>
                         </article>
