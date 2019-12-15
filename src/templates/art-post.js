@@ -14,7 +14,7 @@ const ArtPostTemplate = ({data, pageContext}) => {
         <div>
           <Helmet title={post.title} />
   
-          <div className="wrapper">
+          <div className="art-post-wrapper">
             
             <div className="section-headline">
               <div className="section-links">
@@ -36,11 +36,15 @@ const ArtPostTemplate = ({data, pageContext}) => {
             </div>
             
             <div className="art-post-content">
-              <Img fixed={post.image.fixed} className="art-post-image"/>
-              <div className="art-post-description-wrapper">
-                <h2>{post.title}</h2>
+              <div>
+                  <Img fixed={post.image.fixed} className="art-post-image" style={{position:"relative", width:"100%"}}/>
               </div>
-              
+                
+              <div className="art-post-description-wrapper">
+                <h2 className="art-post-title">{post.title}</h2>
+                <h3 className="art-post-price">{post.price}</h3>
+                <p className="art-post-description">{post.description.description}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -57,10 +61,14 @@ export const query = graphql`
       title
       image {
         id
-        fixed(width: 450) {
+        fixed(width: 400) {
             ...GatsbyContentfulFixed_tracedSVG
         }
       }
+      description {
+        description
+      }
+      price
     }
   }
 `
