@@ -21,7 +21,7 @@ const ArtIndex = ({data}) => {
               {posts.map(({ node }) => {
                 return (
                     <div key={node.title} className="artwork-list-item">
-                        <article>
+                        <article className="artwork-item-article">
                             <Link to={`/art/${node.slug}`} style={{display:"block", width: "100%", height: "100%" }}>
                                 <figure style={{
                                     display:"block",
