@@ -1,0 +1,23 @@
+.section-links {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.section-links-previous{
+    grid-column: 1;
+}
+
+.section-links-next{
+    grid-column: 2;
+    text-align: right;
+}
+
+.art-post-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 5vmin;
+}
+
+.art-post-image {
+    margin: 10px 0;
+}

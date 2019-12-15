@@ -13,15 +13,35 @@ const ArtPostTemplate = ({data, pageContext}) => {
       <Layout>
         <div>
           <Helmet title={post.title} />
+  
           <div className="wrapper">
-            { prev && 
-                <Link to={`/art/${prev.slug}`}>Previous</Link>
-            }
-            { next && 
-                <Link to={`/art/${next.slug}`}>Next</Link>
-            }
-            <h1 className="section-headline">{post.title}</h1>
-            <Img fixed={post.image.fixed} />
+            
+            <div className="section-headline">
+              <div className="section-links">
+                <div className="section-links-previous">
+                  <h3>
+                  { prev && 
+                    <Link to={`/art/${prev.slug}`}>Previous</Link>
+                  }
+                  </h3>
+                </div>
+                <div className="section-links-next">
+                  <h3>
+                  { next && 
+                    <Link to={`/art/${next.slug}`}>Next</Link>
+                  }
+                  </h3>
+                </div>
+              </div>
+            </div>
+            
+            <div className="art-post-content">
+              <Img fixed={post.image.fixed} className="art-post-image"/>
+              <div className="art-post-description-wrapper">
+                <h2>{post.title}</h2>
+              </div>
+              
+            </div>
           </div>
         </div>
     </Layout>
