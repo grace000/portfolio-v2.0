@@ -1,0 +1,32 @@
+/**
+* artwork grid
+*/
+
+.artwork-wrapper {
+    width: calc(94% - 10vmin);
+    margin: 0 1em;
+    padding: 9vmin 0;
+}
+
+.artwork-list {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1.7vmin;
+    row-gap:0;
+}
+
+.artwork-item-article {
+    display: block;
+    position: relative;
+}
+
+.artwork-image {
+  transition: 0.2s ease-in-out;
+  
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}

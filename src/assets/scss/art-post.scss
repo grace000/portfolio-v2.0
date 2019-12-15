@@ -1,0 +1,35 @@
+$break-small: 700px;
+
+.section-links {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    color: grey;
+}
+
+.section-links-previous{
+    grid-column: 1;
+}
+
+.section-links-next{
+    grid-column: 2;
+    text-align: right;
+}
+
+.art-post-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 5vmin;
+    @media screen and (max-width: $break-small) {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+    
+    }
+}
+
+.art-post-image {
+    margin: 10px 0;
+}
+
+.art-post-description {
+    margin: 1em 0;
+}

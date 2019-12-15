@@ -1,8 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
 
-import styles from './about.module.css'
-
 export default ({  }) => (
   <div className={styles.about}>
     <Img className={styles.aboutImage} alt={data.name} fluid={data.heroImage.fluid} />
