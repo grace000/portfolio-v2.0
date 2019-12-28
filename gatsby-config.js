@@ -34,6 +34,12 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: contentfulConfig,
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/assets/images/cartoonshot.png`
+      }
     }
   ],
 }

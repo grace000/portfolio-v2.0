@@ -11,7 +11,7 @@ const ArtIndex = ({data}) => {
     return (
       <Layout>
         <div style={{ background: '#fff' }}>
-          <Helmet title={"artwork"} />
+          <Helmet title={"Tiffani Elmore Artwork"} />
           <div className="hero">
             <h1 className="heroHeadline">Art</h1>
           </div>
