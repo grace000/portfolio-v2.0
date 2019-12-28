@@ -21,7 +21,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Tiffani Site',
+    title: 'Tiffani Elmore',
     author: 'Tiffani Elmore',
   },
   pathPrefix: `/gatsby-contentful-starter`,
