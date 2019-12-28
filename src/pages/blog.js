@@ -10,7 +10,7 @@ const BlogIndex = ({data}) => {
   return (
     <Layout>
       <div style={{ background: '#fff' }}>
-        <Helmet title={"blog posts"} />
+        <Helmet title={"Tiffani Elmore Blog"} />
         <div className="hero">
           <h1 className="heroHeadline">Blog</h1>
         </div>
