@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import PaypalButton from '../components/paypal-button'
 
 
 const ArtPostTemplate = ({data, pageContext}) => {
@@ -44,6 +45,7 @@ const ArtPostTemplate = ({data, pageContext}) => {
                 <h2 className="art-post-title">{post.title}</h2>
                 <h3 className="art-post-price">{post.price}</h3>
                 <p className="art-post-description">{post.description.description}</p>
+                {(post.paypalButtonValue && post.isAvailable) && <PaypalButton paypalKey={post.paypalButtonValue}/>}
               </div>
             </div>
           </div>
