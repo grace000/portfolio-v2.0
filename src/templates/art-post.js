@@ -69,6 +69,8 @@ export const query = graphql`
         description
       }
       price
+      paypalButtonValue
+      isAvailable
     }
   }
 `
