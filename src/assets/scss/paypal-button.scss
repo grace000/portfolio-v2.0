@@ -1,0 +1,21 @@
+$break-small: 700px;
+
+.paypal-input-image {
+    height: 10em;
+    width:15em;
+}
+
+.paypal-buttons-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width:0;
+    height: 0;
+    grid-gap: 30vmin;
+    @media screen and (max-width: $break-small) {
+        grid-gap: 35vmin;
+    }
+}
+
+.paypal-form-post {
+    width: 0;
+}
