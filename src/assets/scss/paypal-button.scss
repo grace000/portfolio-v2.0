@@ -12,9 +12,9 @@ $break-xsmall: 450px;
     grid-template-columns: 1fr 1fr;
     width:0;
     height: 0;
-    grid-gap: 5vmin;
+    grid-gap: 30vmin;
     
-    @media screen and (max-width: $break-xsmall) {
+    @media screen and (max-width: $break-small) {
         grid-template-rows: 1fr 1fr;
         grid-template-columns: none;
         grid-gap: 0vmin;
