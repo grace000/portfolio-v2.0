@@ -4,10 +4,11 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  height: 20vh;
+  height: 10vh;
   max-height: 100px;
   font-size: 1.75em;
   color: var(--purple-300);
+  min-width: 300px;
 }
 
 .navigation-item {

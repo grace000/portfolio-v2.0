@@ -10,7 +10,7 @@ const IndexRoot = ({data}) => {
   
   return (
     <Layout>
-      <div style={{ background: '#fff' }}>
+      <div className="landing">
         <Helmet title={siteTitle} />
         <Hero data={author.node} />
       </div>
