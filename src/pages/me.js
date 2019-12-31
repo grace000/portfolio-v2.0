@@ -7,21 +7,21 @@ import Layout from '../components/layout'
 
 const Me = ({data}) => {
    const about = data.allContentfulPerson.edges[0].node
-    console.log(about, "about here")
+
     return (
       <Layout>
         <div>
         <Helmet title={"Tiffani Elmore About"} />
         <div className="hero">
-          <h1 className="heroHeadline">Blog</h1>
+          <h1 className="heroHeadline">Me</h1>
         </div>
-            <div className="about-post-content">
+            <div className="about-content">
                 <div>
-                    <Img fixed={about.image.fixed} className="about-post-image" style={{position:"relative", width:"100%"}}/>
+                    <Img fixed={about.image.fixed} className="about-image" style={{position:"relative", width:"100%"}}/>
                 </div>
                     
-                <div className="about-post-long-bio-wrapper">
-                    <p className="about-post-long-bio">{about.longBio.longBio}</p>
+                <div className="about-long-bio-wrapper">
+                    <p className="about-long-bio">{about.longBio.longBio}</p>
                 </div>
             </div>
           </div>

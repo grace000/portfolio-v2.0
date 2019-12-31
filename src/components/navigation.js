@@ -8,10 +8,13 @@ export default () => (
         <Link to="/">Home</Link>
       </li>
       <li className="navigationItem">
-        <Link to="/blog/">Blog</Link>
+        <Link to="/blog">Blog</Link>
       </li>
       <li className="navigationItem">
-        <Link to="/art/">Art</Link>
+        <Link to="/art">Art</Link>
+      </li>
+      <li className="navigationItem">
+        <Link to="/me">Me</Link>
       </li>
     </ul>
   </nav>
