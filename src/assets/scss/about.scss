@@ -1,48 +1,12 @@
-.about {
-    position: relative;
-    background: #000;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .aboutImage {
-    /*
-      Ensure golden ratio for the hero size while limiting it to some extend to
-      the viewport width
-    */
-    height: 61.8vh;
-    max-height: 400px;
-  }
-  
-  .aboutDetails {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.7);
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%, 0);
-    font-size: 14px;
-    padding: 0 0.5em;
-  }
-  
-  @media(min-width: 600px) {
-    .aboutDetails {
-      font-size: 16px;
+$break-small: 700px;
+
+.about-content {
+  display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 5vmin;
+    padding-bottom: 1em;
+    @media screen and (max-width: $break-small) {
+        grid-template-columns: none;
+        grid-gap: none;
     }
-  }
-  
-  @media(min-width: 1000px) {
-    .aboutDetails {
-      font-size: 20px;
-    }
-  }
-  
-  .aboutHeadline {
-    margin: 0;
-  }
-  
-  .aboutTitle {
-    margin: 0;
-    font-size: 1.125em;
-    font-weight: bold;
-  }
-  
+}

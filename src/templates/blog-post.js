@@ -21,7 +21,7 @@ const BlogPostTemplate = ({data}) => {
           }}>
             {post.publishDate}
           </p>
-          <div className="articleDescription"
+          <div className="article-description"
             dangerouslySetInnerHTML={{
               __html: post.body.childMarkdownRemark.html,
             }}
