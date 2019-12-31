@@ -10,13 +10,13 @@
   color: var(--purple-300);
 }
 
-.navigationItem {
+.navigation-item {
   display: inline-flex;
   align-items: center;
-  margin: 0 1em;
+  margin: 0 0.4em;
   text-decoration: none;
 }
 
-.navigationItem a {
+.navigation-item a {
   color: currentColor;
 }
