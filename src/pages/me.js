@@ -10,21 +10,18 @@ const Me = ({data}) => {
 
     return (
       <Layout>
-        <div>
         <Helmet title={"Tiffani Elmore About"} />
         <div className="hero">
           <h1 className="heroHeadline">Me</h1>
         </div>
+        <div className="wrapper">
             <div className="about-content">
-                <div>
-                    <Img fixed={about.image.fixed} className="about-image" style={{position:"relative", width:"100%"}}/>
-                </div>
-                    
-                <div className="about-long-bio-wrapper">
-                    <p className="about-long-bio">{about.longBio.longBio}</p>
-                </div>
+                <Img fixed={about.image.fixed} className="about-image" style={{position:"relative", width:"100%"}}/>
+                <div className="about-long-bio-wrapper" 
+                    dangerouslySetInnerHTML={{ __html: about.longBio.childMarkdownRemark.html }}
+                />
             </div>
-          </div>
+        </div>
     </Layout>
     )
 }
@@ -38,7 +35,9 @@ query {
       edges {
         node {
             longBio {
-                longBio
+                childMarkdownRemark {
+                    html
+                }
             }
             image {
                 fixed(width: 400) {
