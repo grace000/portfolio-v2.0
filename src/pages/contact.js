@@ -37,46 +37,48 @@ export default function Contact() {
         <div className="hero">
           <h1 className="heroHeadline">Contact</h1>
         </div>
-      <form
-        name="contact"
-        method="post"
-        action="/"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
-      >
-        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-        <input type="hidden" name="form-name" value="contact" />
-        <p hidden>
-          <label>
-            Don’t fill this out: <input name="bot-field" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your name:
-            <br />
-            <input className="contact-input-name" type="text" name="name" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your email:
-            <br />
-            <input className="contact-input-email" type="email" name="email" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message:
-            <br />
-            <textarea className="contact-textarea" name="message" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <button className="contact-button" type="submit">Send</button>
-        </p>
-      </form>
+        <div className="wrapper">
+            <form
+                name="contact"
+                method="post"
+                action="/"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+            >
+            {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden>
+                <label>
+                    Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+                </label>
+                </p>
+                <p>
+                <label>
+                    Your name:
+                    <br />
+                    <input className="contact-input-name" type="text" name="name" onChange={handleChange} />
+                </label>
+                </p>
+                <p>
+                <label>
+                    Your email:
+                    <br />
+                    <input className="contact-input-email" type="email" name="email" onChange={handleChange} />
+                </label>
+                </p>
+                <p>
+                <label>
+                    Message:
+                    <br />
+                    <textarea className="contact-textarea" name="message" onChange={handleChange} />
+                </label>
+                </p>
+                <p>
+                <button className="contact-button" type="submit">Send</button>
+                </p>
+            </form>
+        </div>
     </Layout>
   )
 }
