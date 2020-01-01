@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from "../components/layout"
 import ArticlePreview from '../components/article-preview'
+import Footer from '../components/footer'
 
 const BlogIndex = ({data}) => {
   const posts = data.allContentfulBlogPost.edges
@@ -26,6 +27,7 @@ const BlogIndex = ({data}) => {
           </ul>
         </div>
       </div>
+      <Footer />
     </Layout>
   )
 }
