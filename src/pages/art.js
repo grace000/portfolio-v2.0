@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from "../components/layout"
 import Img from 'gatsby-image'
+import Footer from '../components/footer';
 
 
 const ArtIndex = ({data}) => {
@@ -54,6 +55,7 @@ const ArtIndex = ({data}) => {
             </ul>
           </div>
         </div>
+        <Footer />
       </Layout>
     )
 }   
