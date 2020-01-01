@@ -11,6 +11,11 @@
   min-width: 300px;
 }
 
+.navigation-item a:hover {
+  color: var(--red-500);
+  text-decoration: underline;
+}
+
 .navigation-item {
   display: inline-flex;
   align-items: center;
@@ -20,4 +25,5 @@
 
 .navigation-item a {
   color: currentColor;
+  text-decoration: none;
 }

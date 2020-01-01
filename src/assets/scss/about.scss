@@ -10,3 +10,13 @@ $break-small: 700px;
         grid-gap: none;
     }
 }
+
+.about-long-bio-wrapper a {
+  color: var(--purple-300);
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+.about-long-bio-wrapper a:hover {
+  color: var(--red-500);
+}

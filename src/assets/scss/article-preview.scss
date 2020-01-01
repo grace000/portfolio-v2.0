@@ -1,6 +1,11 @@
 .previewTitle {
   font-size: 2em;
   color: var(--red-500);
+  text-decoration: none;
+}
+
+.previewTitle:hover {
+  text-decoration: underline;
 }
 
 .tag {

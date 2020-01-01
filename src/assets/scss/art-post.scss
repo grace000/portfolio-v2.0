@@ -15,6 +15,11 @@ $break-small: 700px;
     text-align: right;
 }
 
+.section-links-next:hover, 
+.section-links-previous:hover {
+    color: var(--red-500);
+}
+
 .art-post-content {
     display: grid;
     grid-template-columns: 1fr 2fr;
