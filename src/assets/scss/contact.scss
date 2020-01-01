@@ -1,0 +1,34 @@
+.contact-input-name,
+.contact-textarea,
+.contact-input-email {
+    width: 75%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.contact-input-name:focus,
+.contact-textarea:focus, 
+.contact-input-email:focus {
+    outline: none;
+    background-color:#9e92c17a;
+    font-family: "Avenir";
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.contact-button {
+    width: 50%;
+    font-size: 1em;
+    padding: 12px;
+    background-color: var(--red-500);
+    color: #fff;
+    border:none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    box-shadow: 0 0 0 30px white inset !important;
+}
