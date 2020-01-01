@@ -11,7 +11,7 @@ const Footer = ({data}) => {
                 {icons.map(({ node}) => {
                     return (
                         <li className="navigation-item">
-                            <a key={node.id} href={node.link} target="_blank">
+                            <a className="footer-social-media-link" key={node.id} href={node.link} target="_blank">
                                 <Img fixed={node.socialMediaImage.fixed} />
                             </a>
                         </li>
