@@ -1,17 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
-import Layout from "../components/layout"
+import { Helmet } from 'react-helmet'
+import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import Footer from '../components/footer'
 
-const BlogIndex = ({data}) => {
+const BlogIndex = ({ data }) => {
   const posts = data.allContentfulBlogPost.edges
 
   return (
     <Layout>
       <div style={{ background: '#fff' }}>
-        <Helmet title={"Tiffani Elmore Blog"} />
+        <Helmet title={'Tiffani Elmore Blog'} />
         <div className="hero">
           <h1 className="heroHeadline">Blog</h1>
         </div>
@@ -31,8 +31,6 @@ const BlogIndex = ({data}) => {
     </Layout>
   )
 }
-    
-
 
 export default BlogIndex
 
