@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 
-const IndexRoot = ({data}) => {
+const IndexRoot = ({ data }) => {
   const siteTitle = data.site.siteMetadata.title
   const [author] = data.allContentfulPerson.edges
-  
+
   return (
     <Layout>
       <div className="landing">
@@ -22,7 +22,9 @@ export default IndexRoot
 
 export const query = graphql`
   query {
-    allContentfulPerson(filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }) {
+    allContentfulPerson(
+      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
+    ) {
       edges {
         node {
           name
