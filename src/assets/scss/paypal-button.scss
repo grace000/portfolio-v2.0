@@ -3,44 +3,45 @@ $break-small: 600px;
 $break-xsmall: 450px;
 
 .paypal-input-image {
-    height: 10em;
-    width:15em;
+  height: 6em;
+  width: 15em;
 }
 
 .paypal-buttons-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width:0;
-    height: 0;
-    grid-gap: 30vmin;
-    
-    @media screen and (max-width: $break-small) {
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: none;
-        grid-gap: 0vmin;
-    }
+  display: grid;
+  width: fit-content;
+  margin-bottom: 1em;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3vmin;
+
+  @media screen and (max-width: $break-small) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: none;
+    grid-gap: 0vmin;
+  }
 }
 
 @-moz-document url-prefix() {
-    .paypal-buttons-wrapper {
-        grid-gap: 30vmin;
-        
-        @media screen and (max-width: $break-medium) {
-            grid-gap: 35vmin;
-        }
+  .paypal-buttons-wrapper {
+    grid-gap: 30vmin;
 
-        @media screen and (max-width: $break-small) {
-            grid-template-rows: 1fr 1fr;
-            grid-template-columns: none;
-            grid-gap: 0vmin;
-        }
+    @media screen and (max-width: $break-medium) {
+      grid-gap: 35vmin;
     }
+
+    @media screen and (max-width: $break-small) {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: none;
+      grid-gap: 0vmin;
+    }
+  }
 }
 
 .paypal-form-post {
-    width: 0;
+  width: 0;
 }
 
-.add-cart-button-wrapper, .view-cart-button-wrapper{
-    height: 50px;
+.add-cart-button-wrapper,
+.view-cart-button-wrapper {
+  height: 50px;
 }

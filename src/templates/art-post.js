@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql, Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import Img from 'gatsby-image'
@@ -8,6 +8,12 @@ import PaypalButton from '../components/paypal-button'
 const ArtPostTemplate = ({ data, pageContext }) => {
   const { next, prev } = pageContext
   const post = data.contentfulArtWork
+  const policy = data.contentfulPolicy
+
+  const [showPolicy, hidePolicy] = useState(false)
+  const handleClick = () => {
+    showPolicy ? hidePolicy(false) : hidePolicy(true)
+  }
 
   return (
     <Layout>
@@ -29,23 +35,34 @@ const ArtPostTemplate = ({ data, pageContext }) => {
           </div>
 
           <div className="art-post-content">
-            <div>
-              <Img
-                fixed={post.image.fixed}
-                className="art-post-image"
-                style={{ position: 'relative', width: '100%' }}
-              />
-            </div>
+            <Img
+              fixed={post.image.fixed}
+              className="art-post-image"
+              style={{ position: 'relative', width: '100%' }}
+            />
 
             <div className="art-post-description-wrapper">
               <h2 className="art-post-title">{post.title}</h2>
               <h3 className="art-post-price">{post.price}</h3>
-              <p className="art-post-description">
-                {post.description.description}
-              </p>
               {post.paypalButtonValue && post.isAvailable && (
                 <PaypalButton paypalKey={post.paypalButtonValue} />
               )}
+
+              <p className="art-post-description">
+                {post.description.description}
+              </p>
+
+              <button className="art-post-policy-button" onClick={handleClick}>
+                {policy.name}
+              </button>
+              {showPolicy ? (
+                <div
+                  className="art-post-policy"
+                  dangerouslySetInnerHTML={{
+                    __html: policy.description.childMarkdownRemark.html,
+                  }}
+                />
+              ) : null}
             </div>
           </div>
         </div>
@@ -72,6 +89,14 @@ export const query = graphql`
       price
       paypalButtonValue
       isAvailable
+    }
+    contentfulPolicy {
+      name
+      description {
+        childMarkdownRemark {
+          html
+        }
+      }
     }
   }
 `
